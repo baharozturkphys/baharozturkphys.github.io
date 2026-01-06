@@ -1,135 +1,114 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Academic Life</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Profile | Bahar Ozturk</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the CV button */
+        .btn-download {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-download:hover {
+            background-color: #555;
+        }
+        /* Style for project lists */
+        .project-item {
+            margin-bottom: 30px;
+        }
+        .skill-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 0;
+            list-style: none;
+        }
+        .skill-tag {
+            background-color: #eee;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #333;
+        }
+    </style>
 </head>
-
-<style>
-div.div1 {
-    display: inline-block;
-    width: 300px;
-    margin-left: 30px;
-
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-p{
-    font-size: 12px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    line-height: 1.5em;
-
-}
-
-p.para1 {
-    background-color:rgba(92, 43, 226, 0.349);
-    padding: 20px;
-    border-color:black ;
-    border-width: 1px ;
-    width: 200px;
-
-}
-
-
-p.para2{
-
-    font-size: 16px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:darkslateblue;
-    font-weight: 400;
-    text-align: right;
-    margin-top: 60px;
-
-}
-
-p.para3{
-    font-size: 10px;
-    text-align: right;
-
-}
-
-h1{
-    color:darkslateblue;
-    text-align: center;
-    font-family:cursive;
-    margin-bottom: 15px;
-}
-h2 {
-    color: rgb(116, 50, 178);
-    font-family: sans-serif;
-}
-
-p.bar{
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600
-}
-
-</style>
-
-
-</style>
-
 <body>
 
-<a href="index.html" class="btn-back">&larr; back</a>
+    <!-- "no-sidebar" class removes the sidebar layout -->
+    <div class="container no-sidebar">
+        
+        <main>
+            <a href="index.html" class="btn-back">&larr; Back to Home</a>
 
+            <header style="margin-bottom: 40px; border-bottom: 2px solid #eee; padding-bottom: 20px;">
+                <h1>Academic Profile</h1>
+                <p>Graduate Researcher in Ultracold Atoms & Quantum Physics</p>
+                
+                <!-- LINK TO YOUR CV HERE -->
+                <!-- Make sure the filename matches exactly what you put in the 'files' folder -->
+                <a href="files/Bahar_Ozturk_CV.pdf" target="_blank" class="btn-download">
+                    &#128196; Download Full CV (PDF)
+                </a>
+            </header>
 
+            <section>
+                <h2>Research Interests</h2>
+                <p>
+                    My primary research focuses on the physics of <strong>Bose-Einstein Condensates (BEC)</strong> and 
+                    ultracold atom systems. I am particularly interested in:
+                </p>
+                <ul>
+                    <li>Time-of-flight imaging analysis and diagnostics</li>
+                    <li>Optical lattices and trap dynamics</li>
+                    <li>Quantum simulation using neutral atoms</li>
+                </ul>
+            </section>
 
-<div style="margin-left:20px;
-margin-top: 30px;
-margin-right: 20px;
-display: grid;
-grid-template-columns: 1200px 1fr;">
-
-    <div style="display: grid;
-            margin-top: 80px;
-            grid-template-rows: 75px 1fr;
-                    ">
-
-        <div style="display: grid;
-                    grid-template-columns: 250px 250px 250px 250px;
-                    border: 1px;
-                    border-color: black;
-                    border-bottom: 1px;
-                    border-style: solid;
-                    margin-right:15px;
-                    background-image: url(sa.jpg);
-                    background-position: center;
-                    opacity: 0.6;
-                    ">
-
-                <div style="text-align: center;">
-                    <p class="bar"><a href = "">Projects</a></p>
+            <section>
+                <h2>Current Projects</h2>
+                
+                <div class="project-item">
+                    <h3>Bimodal Distribution Analysis</h3>
+                    <p>
+                        Developing Python-based computational tools to analyze experimental data from atom clouds. 
+                        The project involves fitting bimodal distributions to separate the thermal cloud fraction 
+                        from the condensate fraction in time-of-flight images.
+                    </p>
                 </div>
 
-                <div style="text-align: center;">
-                <p class="bar"><a href = "mycourses.html">Courses</a></p>
+                <div class="project-item">
+                    <h3>Laser Cooling Simulation</h3>
+                    <p>
+                        Simulating the interaction between Gaussian laser beams and atomic ensembles to optimize 
+                        evaporative cooling sequences.
+                    </p>
                 </div>
+            </section>
 
-                <div style="text-align: center;">
-                    <p class="bar"><a href = "">Papers I Like</a></p>
-                </div>
+            <section>
+                <h2>Technical Toolbox</h2>
+                <ul class="skill-list">
+                    <li class="skill-tag">Python (NumPy, SciPy)</li>
+                    <li class="skill-tag">Mathematica</li>
+                    <li class="skill-tag">LaTeX</li>
+                    <li class="skill-tag">Image Analysis</li>
+                    <li class="skill-tag">Git/GitHub</li>
+                </ul>
+            </section>
 
-                <div style="text-align: center;">
-                    <p class="bar"><a href="BaharOzturk_CV.pdf">Curriculum Vitae</a></p>
-                </div>
-
-        </div>
-
-        <div style="display: flex;
-            justify-content:center">
-              
-            <p style="
-                            padding: 20px;
-                            width: 300px;
-                            margin-bottom: 200px;">
-            </p>
-        </div>
-    </div>  
+        </main>
     </div>
-</div>
+
+</body>
+</html>
 
 
 
