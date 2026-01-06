@@ -119,3 +119,89 @@ nav.main-nav a:hover {
     height: auto;
     border-radius: 4px;
 }
+
+
+
+/* Go Back Button */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color); /* darkslateblue */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Removes underline */
+    border-radius: 5px;    /* Rounded corners */
+    font-weight: bold;
+    margin-bottom: 20px;   /* Space below the button */
+    transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: var(--accent-color); /* Lighter purple on hover */
+    color: white;
+}
+
+
+
+
+/* Blog Section Styles */
+.blog-entry {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Light line between posts */
+}
+
+.blog-entry:last-child {
+    border-bottom: none;
+}
+
+.blog-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 5px;
+    display: block; /* Forces date to its own line */
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 5px 0 10px 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-title a:hover {
+    color: var(--accent-color);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* Layout for pages with NO sidebar */
+.container.no-sidebar {
+    grid-template-columns: 1fr; /* Single column that spans full width */
+    max-width: 900px; /* Optional: Keeps text from getting too wide to read */
+}
+
+/* Hide sidebar if it was accidentally left in the HTML */
+.container.no-sidebar .sidebar {
+    display: none;
+}
