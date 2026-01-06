@@ -128,11 +128,11 @@ nav.main-nav a:hover {
     align-items: center;
     background-color: var(--primary-color); /* darkslateblue */
     color: white;
-    padding: 10px 20px;
+    padding: 5px 5px;
     text-decoration: none; /* Removes underline */
-    border-radius: 2px;    /* Rounded corners */
+    border-radius: 5px;    /* Rounded corners */
     font-weight: bold;
-    margin-bottom: 20px;   /* Space below the button */
+    margin-bottom: 10px;   /* Space below the button */
     transition: background-color 0.3s;
 }
 
