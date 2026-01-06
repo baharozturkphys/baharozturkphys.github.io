@@ -188,6 +188,43 @@ nav.main-nav a:hover {
 }
 
 
+/* Gallery Grid System */
+.gallery-grid {
+    display: grid;
+    /* Creates columns that automatically fit the screen width */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Subtle lift effect on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Forces uniform height */
+    object-fit: cover; /* Crops image cleanly to fit the box */
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.gallery-caption {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 5px 0 0 0;
+    line-height: 1.4;
+}
 
 
 
