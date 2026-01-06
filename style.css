@@ -130,7 +130,7 @@ nav.main-nav a:hover {
     color: white;
     padding: 10px 20px;
     text-decoration: none; /* Removes underline */
-    border-radius: 5px;    /* Rounded corners */
+    border-radius: 2px;    /* Rounded corners */
     font-weight: bold;
     margin-bottom: 20px;   /* Space below the button */
     transition: background-color 0.3s;

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favs | Bahar Ozturk</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for My Favs Page */
+        
+        /* Grid for the main content blocks */
+        .favs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        /* Styling for individual content cards/sections */
+        .fav-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .fav-section h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Books & Papers - List Style */
+        .book-list {
+            list-style: none;
+            padding: 0;
+        }
+        .book-list li {
+            margin-bottom: 15px;
+        }
+        .book-title {
+            font-weight: bold;
+            color: #333;
+            display: block;
+        }
+        .book-author {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Music Map - Simple links */
+        .music-link {
+            display: block;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #444;
+            border-bottom: 1px dashed #eee;
+            transition: color 0.2s;
+        }
+        .music-link:hover {
+            color: var(--accent-color);
+            padding-left: 5px; /* Subtle movement on hover */
+        }
+
+        /* Mood Chips */
+        .mood-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .mood-chip {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: default;
+        }
+        .mood-chip:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Internet Corner - Compact list */
+        .bookmark-list li {
+            margin-bottom: 8px;
+        }
+        .bookmark-list a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .bookmark-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Analogies - Full Width Section */
+        .analogy-box {
+            background-color: #fafafa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .analogy-title {
+            font-weight: bold;
+            font-style: normal;
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container no-sidebar">
+        
+        <main>
+            <a href="index.html" class="btn-back">&larr; Back to Home</a>
+
+            <header style="margin-bottom: 40px; border-bottom: 2px solid #eee; padding-bottom: 20px;">
+                <h1>My Favorites</h1>
+                <p>A curated collection of things that shape my thinking and downtime.</p>
+            </header>
+
+            <!-- Grid Container for top 4 sections -->
+            <div class="favs-grid">
+                
+                <!-- 1. Books / Papers -->
+                <section class="fav-section">
+                    <h2>📚 Books & Papers</h2>
+                    <ul class="book-list">
+                        <li>
+                            <span class="book-title">Bose-Einstein Condensation in Dilute Gases</span>
+                            <span class="book-author">Pethick & Smith - "The bible for my research."</span>
+                        </li>
+                        <li>
+                            <span class="book-title">Surely You're Joking, Mr. Feynman!</span>
+                            <span class="book-author">Richard Feynman - "For reminding me physics is fun."</span>
+                        </li>
+                        <li>
+                            <span class="book-title">Dark Matter and the Dinosaurs</span>
+                            <span class="book-author">Lisa Randall - "Great pop-sci perspective."</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- 2. Music Map -->
+                <section class="fav-section">
+                    <h2>🎧 Music Map</h2>
+                    <a href="#" class="music-link">🎵 Coding / Focus Playlist (Lo-Fi)</a>
+                    <a href="#" class="music-link">❄️ Munich Winter Vibes (Indie Folk)</a>
+                    <a href="#" class="music-link">🎸 Balthazar - "Fever" (Album on repeat)</a>
+                    <a href="#" class="music-link">🎹 Late Night Lab Sessions</a>
+                </section>
+
+                <!-- 3. Favorites by Mood -->
+                <section class="fav-section">
+                    <h2>✨ Tiny Favs by Mood</h2>
+                    <div class="mood-container">
+                        <span class="mood-chip" title="Isar River">Walking Spot: Isar</span>
+                        <span class="mood-chip" title="Man vs Machine">Coffee: MvM</span>
+                        <span class="mood-chip" title="VS Code Dark+">Editor Theme: Dark+</span>
+                        <span class="mood-chip" title="Late night debugging">Time: 2 AM</span>
+                        <span class="mood-chip" title="English Garden">Summer: Englischer Garten</span>
+                    </div>
+                </section>
+
+                <!-- 4. Internet Corner -->
+                <section class="fav-section">
+                    <h2>🔗 Internet Corner</h2>
+                    <ul class="bookmark-list">
+                        <li><a href="https://arxiv.org/list/cond-mat.quant-gas/recent">arXiv: cond-mat.quant-gas</a> - Daily ritual</li>
+                        <li><a href="#">Hyperphysics</a> - Quick sanity checks</li>
+                        <li><a href="#">Wolfram Alpha</a> - The cheat sheet</li>
+                        <li><a href="#">Wait But Why</a> - Deep dives</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- 5. Analogies (Full Width below grid) -->
+            <section style="margin-top: 40px;">
+                <h2 style="color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px;">💡 Favorite Analogies</h2>
+                
+                <div class="analogy-box">
+                    <span class="analogy-title">Phase Space Density as "Crowdedness"</span>
+                    "Imagine a concert hall. High spatial density is just a packed room. But high phase-space density is a packed room where everyone is also dancing in perfect unison (same momentum). That's when the quantum magic happens."
+                </div>
+
+                <div class="analogy-box">
+                    <span class="analogy-title">Evaporative Cooling as "Coffee"</span>
+                    "It's exactly like blowing on hot coffee. You strictly remove the most energetic (hottest) atoms from the trap, allowing the remaining ones to re-thermalize at a lower average temperature. We just lose 99% of the coffee to get a single sip of BEC."
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
