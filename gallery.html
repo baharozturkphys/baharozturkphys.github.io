@@ -5,74 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Bahar Ozturk</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* LIGHTBOX STYLES */
+        
+        /* The overlay background (hidden by default) */
+        .lightbox {
+            display: none; /* Hidden */
+            position: fixed; 
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* The Image itself */
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%; 
+            max-height: 80vh; /* Keeps it within view */
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        /* Caption Text */
+        .lightbox-caption {
+            margin-top: 15px;
+            color: #ccc;
+            font-size: 1rem;
+            text-align: center;
+            font-family: var(--font-main);
+        }
+
+        /* Close Button (top right) */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* Make images in gallery look clickable */
+        .gallery-item img {
+            cursor: zoom-in;
+            transition: transform 0.2s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.02);
+        }
+
+    </style>
 </head>
 <body>
 
-    <!-- Using "no-sidebar" to keep full width focus on photos -->
     <div class="container no-sidebar">
         
         <main>
-            <!-- Standard Back Button -->
             <a href="index.html" class="btn-back">&larr; Back</a>
 
             <header style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px;">
                 <h1>Photo Gallery</h1>
-                <p>Random snapshots from concerts, travels, and life.</p>
+                <p>Random snapshots from life.</p>
             </header>
 
-            <!-- Responsive Grid Container -->
             <div class="gallery-grid">
-                
-                <!-- Item 1 -->
+
                 <div class="gallery-item">
-                    <img src="images/IMG20220917000410.jpg" alt="Concert" loading="lazy">
-                    <p class="gallery-caption">Balthazar concert at Istanbul - Sept '22</p>
+                    <!-- Note: onclick="openLightbox(this)" passes the image to the script -->
+                    <img src="images/802D4B12-70A1-4C6B-A38E-5492DD507AE4_1_102_o.jpeg" 
+                         alt="My baby girl Çörek, Denizli, 2025" 
+                         loading="lazy"
+                         onclick="openLightbox(this)">
+                    <p class="gallery-caption">My baby girl Çörek, Denizli, 2025</p>
                 </div>
 
-
-                <!-- Item 3 -->
                 <div class="gallery-item">
-                    <img src="images/IMG20220813102716.jpg" alt="Trekking" loading="lazy">
-                    <p class="gallery-caption">Trekking in Prague</p>
-                </div> 
-
-
-
-                <div class="gallery-item">
-                    <img src="images/IMG20220723225100.jpg" alt="Friends" loading="lazy">
-                    <p class="gallery-caption">Friends in Vienna - July '22</p>
+                    <img src="images/4926C4B4-5D21-422D-B028-D30A4201B92A_1_105_c.jpeg" 
+                         alt="Berlin, 2024" 
+                         loading="lazy"
+                         onclick="openLightbox(this)">
+                    <p class="gallery-caption">Berlin, 2024</p>
                 </div>
 
-                <!-- Item 6 -->
                 <div class="gallery-item">
-                    <img src="images/IMG20230301202310.jpg" alt="Leylosum" loading="lazy">
-                    <p class="gallery-caption">Leylosum</p>
+                    <img src="images/164CDDF8-8177-4990-A486-099F9A69EA0C_1_105_c.jpeg" 
+                         alt="Love of my life, Berlin, 2024" 
+                         loading="lazy"
+                         onclick="openLightbox(this)">
+                    <p class="gallery-caption">Love of my life, Berlin, 2024</p>
                 </div>
-
-                <!-- Item 7 -->
-                <div class="gallery-item">
-                    <img src="images/IMG20220703005910.jpg" alt="Vienna" loading="lazy">
-                    <p class="gallery-caption">Chelsea /w Asaf, Vienna - July '22</p>
-                </div>
-
-
 
             </div>
-            
-            <!-- Removed the sidebar/profile picture section entirely as requested -->
             
         </main>
     </div>
 
+    <!-- THE LIGHTBOX OVERLAY (Hidden by default) -->
+    <div id="myLightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close" onclick="closeLightbox(event)">&times;</span>
+        <img class="lightbox-content" id="img01">
+        <div id="caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- SCRIPT TO HANDLE CLICKS -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myLightbox");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        // Function called when an image is clicked
+        function openLightbox(element) {
+            modal.style.display = "flex"; // Show the overlay
+            modalImg.src = element.src;   // Set full image
+            captionText.innerHTML = element.alt; // Set caption from ALT text
+        }
+
+        // Function to close
+        function closeLightbox(event) {
+            // Close if clicking the X or the background (but not the image itself)
+            if (event.target !== modalImg) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Close on "Escape" key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+
 </body>
 </html>
-
-
-
-
-
-</body>
-
-
 
 
